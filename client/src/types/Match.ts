@@ -1,17 +1,17 @@
 export interface Match {
-  idEvent: string;
-  strEvent: string;
-  strHomeTeam: string;
-  strAwayTeam: string;
-  dateEvent: string;
-  strTime: string;
-  idHomeTeam: string;
-  idAwayTeam: string;
-  strHomeTeamBadge?: string;
-  strAwayTeamBadge?: string;
-  strLeague: string;
+  id: string;
+  name: string;
+  homeTeam: string;
+  awayTeam: string;
+  date: string;
+  time: string;
+  league: string;
+  homeBadge?: string;
+  awayBadge?: string;
 }
 
 export interface MatchResponse {
-  events: Match[];
+  success: boolean;
+  matches: Match[];
+  count: number;
 } 

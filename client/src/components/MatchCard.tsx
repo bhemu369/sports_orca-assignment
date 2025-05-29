@@ -32,18 +32,27 @@ const MatchCard: React.FC<MatchCardProps> = ({ match }) => {
     }
   };
 
-  const { date, time } = formatDateTime(match.dateEvent, match.strTime);
+  const { date, time } = formatDateTime(match.date, match.time);
 
   return (
     <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-6 border border-gray-200">
-      {/* Match Teams - Vertical Layout */}
+      {/* League Badge */}
+      {match.league && (
+        <div className="text-center mb-4">
+          <span className="inline-block bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full">
+            {match.league}
+          </span>
+        </div>
+      )}
+
+      {/* Match Teams */}
       <div className="space-y-4 mb-6">
         {/* Home Team */}
         <div className="flex items-center space-x-3">
-          {match.strHomeTeamBadge && (
+          {match.homeBadge && (
             <img
-              src={match.strHomeTeamBadge}
-              alt={`${match.strHomeTeam} badge`}
+              src={match.homeBadge}
+              alt={`${match.homeTeam} badge`}
               className="w-12 h-12 object-contain flex-shrink-0"
               onError={(e) => {
                 e.currentTarget.style.display = 'none';
@@ -51,7 +60,7 @@ const MatchCard: React.FC<MatchCardProps> = ({ match }) => {
             />
           )}
           <span className="font-semibold text-gray-800 text-lg leading-tight">
-            {match.strHomeTeam}
+            {match.homeTeam}
           </span>
         </div>
 
@@ -64,10 +73,10 @@ const MatchCard: React.FC<MatchCardProps> = ({ match }) => {
 
         {/* Away Team */}
         <div className="flex items-center space-x-3">
-          {match.strAwayTeamBadge && (
+          {match.awayBadge && (
             <img
-              src={match.strAwayTeamBadge}
-              alt={`${match.strAwayTeam} badge`}
+              src={match.awayBadge}
+              alt={`${match.awayTeam} badge`}
               className="w-12 h-12 object-contain flex-shrink-0"
               onError={(e) => {
                 e.currentTarget.style.display = 'none';
@@ -75,7 +84,7 @@ const MatchCard: React.FC<MatchCardProps> = ({ match }) => {
             />
           )}
           <span className="font-semibold text-gray-800 text-lg leading-tight">
-            {match.strAwayTeam}
+            {match.awayTeam}
           </span>
         </div>
       </div>
