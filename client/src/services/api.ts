@@ -1,8 +1,8 @@
 import axios from 'axios';
 import type { MatchResponse } from '../types/Match';
 
-// API Configuration - Using backend server
-const API_BASE_URL = 'http://localhost:4000/api';
+// API Configuration - Using environment variable with fallback
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:4000/api';
 
 export const matchApi = {
   getUpcomingMatches: async (): Promise<MatchResponse> => {
