@@ -58,11 +58,11 @@ const App: React.FC = () => {
           <div className="flex items-center justify-center space-x-3">
             <Trophy className="w-8 h-8 text-blue-600" />
             <h1 className="text-3xl font-bold text-gray-900">
-              Today's Football Matches
+              Upcoming Football Matches
             </h1>
           </div>
           <p className="text-center text-gray-600 mt-2">
-            Live matches happening today
+            Next 7 days of football matches from around the world
           </p>
         </div>
       </header>
@@ -75,10 +75,10 @@ const App: React.FC = () => {
           <div className="text-center py-12">
             <Trophy className="w-16 h-16 text-gray-400 mx-auto mb-4" />
             <h2 className="text-xl font-semibold text-gray-600 mb-2">
-              No Matches Today
+              No Upcoming Matches
             </h2>
             <p className="text-gray-500">
-              There are no football matches scheduled for today.
+              There are no football matches scheduled for the next 7 days.
             </p>
           </div>
         )}
