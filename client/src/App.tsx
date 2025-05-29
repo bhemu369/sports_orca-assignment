@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { AlertCircle, Trophy } from 'lucide-react';
+import { Trophy } from 'lucide-react';
 import MatchCard from './components/MatchCard';
 import LoadingSpinner from './components/LoadingSpinner';
 import { matchApi } from './services/api';
@@ -47,13 +47,6 @@ const App: React.FC = () => {
 
     fetchMatches();
   }, []);
-
-  const retryFetch = () => {
-    setError(null);
-    setLoading(true);
-    // Re-trigger the useEffect
-    window.location.reload();
-  };
 
   if (error) {
     return (
